@@ -2,6 +2,8 @@ ARG GRAFANA_VERSION=13.0.1
 
 FROM grafana/grafana:$GRAFANA_VERSION
 
+LABEL org.opencontainers.image.authors="andisugandi@gmail.com"
+
 COPY config/grafana-datasources.yml /etc/grafana/provisioning/datasources/provisioning-datasources.yaml
 COPY config/grafana-dashboards.yml /etc/grafana/provisioning/dashboards/provisioning-dashboards.yaml
 COPY config/dashboards/grafana-dashboard-container-metrics.json /var/lib/grafana/dashboards/container-metrics.json
